@@ -1,3 +1,21 @@
-/* body{
-    background-color: antiquewhite;
-} */
+body{
+    background-color: rgb(208, 217, 215);
+}
+h5{
+    margin-bottom: 1em;
+}
+select{
+    margin-bottom: 1em;
+}
+
+.card{
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+.card-footer{
+    padding-top: 1.5em;
+}
+img{
+    padding-left: 2em;
+    padding-right: 2em;
+}
