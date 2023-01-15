@@ -1,27 +1,42 @@
 <div class="row">
     <div class="col-md-4 mx-auto">
         <div class="card">
-            <img src="terminal2.png" alt="terminal" class="card-img-top">
+            <img src="terminal2.png" id="img-principal" alt="terminal" class="card-img-top">
             <div class="card-body">
-                <h5 class="justify-content-sm-center">Selecciona la  cantidad  que deseas recargar</h5>
+               
                 <div class="form-group">
-                        <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <h4>
+                    Recarga tu tajerta de Transporte Inteligente
+                </h4>
+
+                        <p class="text-muted text-sm mb-0">Introduce el No. tarjeta</p>
+                            <div class="row px-3">
+                                <input class="form-control form-control-lg" type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
+            
                  </div>
-                <p>
-                    Recarga facil tu tajerta para sistema de transporte inteligente
-                </p>
+                
             </div>
-            <div class="card-footer ">
-                <button class="btn btn-primary btn-block col-md-12 mx-auto">
-                    Recarga     <i class="fas fa-coins"></i>
-                </button>
             </div>
+                
+    <section> 
+      <div class="product">
+        <img class="str" src="card2.png" alt="The cover of Stubborn Attachments" />
+        <div class="Recarga de tarjeta">
+ <h5 class="justify-content-sm-center">Selecciona la  cantidad  que deseas recargar</h5>
+         <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
+                            <option>20</option>
+                            <option>50</option>
+                            <option>100</option>
+                            <option>150</option>
+                            <option>200</option>
+                        </select>
         </div>
+      </div>
+      <form action="/create-checkout-session" method="POST">
+        <button type="submit" id="checkout-button">Recargar</button>
+      </form>
+    </section>
+       </div>
+       
     </div>
 </div>
