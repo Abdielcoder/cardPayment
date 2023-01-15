@@ -1,42 +1,61 @@
 <div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card">
-            <img src="terminal2.png" id="img-principal" alt="terminal" class="card-img-top">
-            <div class="card-body">
-               
-                <div class="form-group">
-                        <h4>
-                    Recarga tu tajerta de Transporte Inteligente
-                </h4>
+<div class="col-md-4 mx-auto">
+<div class="card">
+   <img src="terminal2.png" id="img-principal" alt="terminal" class="card-img-top">
+   <div class="card-body">
+      <div class="form-group">
+         <h4>
+            Recarga tu tajerta de Transporte Inteligente
+         </h4>
+         <p class="text-muted text-sm mb-0 inputC">Introduce el No. tarjeta</p>
+         <div class="row px-3 ">
+            <input class="form-control form-control-lg" type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
+         </div>
+      </div>
+   {{!-- <form action= "/checkout" method= "POST">
+      <script 
+         src= "https://checkout.stripe.com/checkout.js" class= "stripe-button"
+         data-key = "pk_test_51MKJ3fHxSmEScnz4Nq72YJ6rOANcvKxmYdKqN9XOCV66bIatSHBpO7VNd2Tx82AuieB1Lf51uTxAierGXvQel2BD0012sha029" 
+         data-amount= "2000"
+         data-name = "Recarga EFFISAT"
+         data-description = "Rercarga electronica Inteligente"
+         data-image = "https://thumbs.dreamstime.com/b/silueta-de-logotipo-bus-vector-gr%C3%A1fico-la-del-perfecto-para-icono-o-etc-183602445.jpg"
+         data-locale = "auto">
+         </script>
+      <script>
+         document.getElementsByClassName('stripe-button-el')[0].style.display='none';
+      </script>
+      <p class="text-muted text-sm mb-0">Selecciona la  cantidad  que deseas recargar</p>
+      <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
+         <option>20</option>
+         <option>50</option>
+         <option>100</option>
+         <option>150</option>
+         <option>200</option>
+      </select>
+      <button class= "btn btn-dark btn-block">Recarga <i class= "fas fa-coins "></i>
+      </button>
+   </form> --}}
 
-                        <p class="text-muted text-sm mb-0">Introduce el No. tarjeta</p>
-                            <div class="row px-3">
-                                <input class="form-control form-control-lg" type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
-            
-                 </div>
-                
-            </div>
-            </div>
-                
-    <section> 
+   <section>
+      
       <div class="product">
-        <img class="str" src="card2.png" alt="The cover of Stubborn Attachments" />
-        <div class="Recarga de tarjeta">
- <h5 class="justify-content-sm-center">Selecciona la  cantidad  que deseas recargar</h5>
-         <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
-                            <option>20</option>
-                            <option>50</option>
-                            <option>100</option>
-                            <option>150</option>
-                            <option>200</option>
-                        </select>
+        <img src="card2.png" alt="The cover of Stubborn Attachments" />
+        <div class="description">
+         
+          <p class="text-muted text-sm mb-0">Selecciona la  cantidad deseada a recargar</p>
+      <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
+         <option>20</option>
+         <option>50</option>
+         <option>100</option>
+         <option>150</option>
+         <option>200</option>
+      </select>
         </div>
       </div>
-      <form action="/create-checkout-session" method="POST">
-        <button type="submit" id="checkout-button">Recargar</button>
+      <form action="/checkout" method="POST">
+        <button type="submit" id="checkout-button">Recarga <i class="fa-solid fa-coins"></i></button>
       </form>
     </section>
-       </div>
-       
-    </div>
+</div>
 </div>
