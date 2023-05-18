@@ -49,6 +49,21 @@ p {
   justify-content: center;
   box-sizing: border-box;
 }
+h5{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.154px;
+  color: #060811;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  box-sizing: border-box;
+}
 img {
   border-radius: 6px;
   margin: 10px;

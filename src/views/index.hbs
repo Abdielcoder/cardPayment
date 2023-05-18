@@ -13,37 +13,16 @@
             <input class="form-control form-control-lg" type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
             <button onclick="handleFormSubmit()">Validar</button>
          </div>
-          <p class="text-muted text-sm mb-0 inputC">Nombre</p>
-         <div class="row px-3 ">
-            <input class="form-control form-control-lg" type="text" name="card-num" placeholder="" size="18" id="name" minlength="19" maxlength="19">
+          <h5 class="text-muted text-sm mb-0 inputC mititulo">Nombre</h5>
+         <div class="row px-3 " style="margin-top:0px;">
+            <input class="form-control form-control-lg" type="text" name="card-num" placeholder="Nombre" size="18" id="name" minlength="19" maxlength="19" value="">
+         </div>
+         <h5 class="text-muted text-sm mb-0 inputC mititulo">Saldo</h5>
+         <div class="row px-3 " style="margin-top:0px;">
+            <input class="form-control form-control-lg" type="text" name="card-num" placeholder="Saldo" size="18" id="saldo" minlength="19" maxlength="19" value="">
          </div>
       </div>
-   {{!-- <form action= "/checkout" method= "POST">
-      <script 
-         src= "https://checkout.stripe.com/checkout.js" class= "stripe-button"
-         data-key = "pk_test_51MKJ3fHxSmEScnz4Nq72YJ6rOANcvKxmYdKqN9XOCV66bIatSHBpO7VNd2Tx82AuieB1Lf51uTxAierGXvQel2BD0012sha029" 
-         data-amount= "2000"
-         data-name = "Recarga EFFISAT"
-         data-description = "Rercarga electronica Inteligente"
-         data-image = "https://thumbs.dreamstime.com/b/silueta-de-logotipo-bus-vector-gr%C3%A1fico-la-del-perfecto-para-icono-o-etc-183602445.jpg"
-         data-locale = "auto">
-         </script>
-      <script>
-         document.getElementsByClassName('stripe-button-el')[0].style.display='none';
-      </script>
-      <p class="text-muted text-sm mb-0">Selecciona la  cantidad  que deseas recargar</p>
-      <select class="form-select" id="exampleSelect1" data-dashlane-rid="caac9455c98de654" data-form-type="other">
-         <option>20</option>
-         <option>50</option>
-         <option>100</option>
-         <option>150</option>
-         <option>200</option>
-      </select>
-      <button class= "btn btn-dark btn-block">Recarga <i class= "fas fa-coins "></i>
-      </button>
-   </form> --}}
-
-   <section>
+  
       
       <div class="product">
         <img src="card2.png" alt="The cover of Stubborn Attachments" />
@@ -65,24 +44,31 @@
     </section>
 </div>
 </div>
+ </section>
 <script>
-function handleFormSubmit() {
-  const cardNumInput = document.getElementById('cr_no');
-  const nameInput = document.getElementById('name');
-
-  const cardNumValue = cardNumInput.value.trim();
-
-  fetch(`http://localhost:9000/api/tarjeta/${cardNumValue}`)
-.then(response => response.json())
-  .then(data => {
-    console.log(data); // Verifica la estructura de los datos recibidos en la consola
+  function handleFormSubmit() {
+    const cardNumInput = document.getElementById('cr_no');
     const nameInput = document.getElementById('name');
-    nameInput.value = data.nombre; // Asigna el valor del campo 'nombre' al campo de entrada
-  })
-  .catch(error => {
-    console.error(error); // Maneja los errores de la solicitud
-  });
+    const saldoInput = document.getElementById('saldo');
 
+    const cardNumValue = cardNumInput.value.trim();
 
+    fetch(`http://localhost:9000/api/tarjeta/${cardNumValue}`)
+      .then(response => response.json())
+      .then(dataArray => {
+        // Obtener el primer objeto del arreglo
+        const jsonData = dataArray[0];
 
+        setTimeout(() => {
+          document.getElementById('name').value = jsonData.nombre;
+          document.getElementById('saldo').value = jsonData.saldo;
+        }, 0);
+
+        console.log(jsonData); // Puedes hacer algo más útil con los datos recibidos
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
 </script>
+
